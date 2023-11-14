@@ -11,7 +11,7 @@ import (
 
 func TestGetAppNameInit(t *testing.T) {
 	value := GetAppName()
-	expected := "undefined app name"
+	expected := "server demo"
 	if value != expected {
 		t.Errorf("wrong value %s, expected %s", value, expected)
 	}
@@ -19,7 +19,7 @@ func TestGetAppNameInit(t *testing.T) {
 
 func TestGetAppDescInit(t *testing.T) {
 	value := GetAppDescription()
-	expected := "undefined app description"
+	expected := "a server application demo including embedded sources"
 	if value != expected {
 		t.Errorf("wrong value %s, expected %s", value, expected)
 	}

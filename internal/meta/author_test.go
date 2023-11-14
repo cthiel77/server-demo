@@ -9,7 +9,7 @@ import (
 
 func TestGetAuthorNameInit(t *testing.T) {
 	value := GetAuthorName()
-	expected := "undefined"
+	expected := "Carsten Thiel"
 	if value != expected {
 		t.Errorf("wrong value %s, expected %s", value, expected)
 	}
@@ -17,7 +17,7 @@ func TestGetAuthorNameInit(t *testing.T) {
 
 func TestGetAuthorEmail(t *testing.T) {
 	value := GetAuthorEmail()
-	expected := "undefined"
+	expected := "dev@thiel-inet.de"
 	if value != expected {
 		t.Errorf("wrong value %s, expected %s", value, expected)
 	}
