@@ -19,3 +19,11 @@
 
 # Go workspace file
 go.work
+
+.vscode
+.idea
+.history
+.DS_Store
+__debug*
+#
+!.gitkeep

@@ -1,0 +1,4 @@
+There are 3 ways to load config data: 
+1. File compiled into binary (embed as defaults)
+2. file in config folder or root path of the binary, 
+3. load file by flag, 

@@ -1,0 +1,27 @@
+name: release
+on:
+  push:
+    branches:
+      - main
+
+#
+# Required to be able to call the REST API to create both the
+# new tag and release.
+#
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Perform a semantic release
+    runs-on: ubuntu-latest
+    steps:
+      - name: action-release
+        uses: mateothegreat/action-release@main
+        with:
+          github_token: ${{ secrets.CI_COMMON }}
+          owner: cthiel77
+          repo: server-demo
+          increment: patch
+          committer_name: Carsten Thiel
+          committer_email: dev@thiel-inet.de
