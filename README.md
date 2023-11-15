@@ -19,14 +19,14 @@ Operating modes have been implemented for simple control of log outputs, etc. Th
 
 ### flags 
 
-| flag                 | available values         | defaults | read only | description                                                              |
-| :------------------- | :----------------------- | :------- | :-------: | :----------------------------------------------------------------------- |
-| `-f`<br/>`--config-file` | json config file path    | ---      |           | to override values of embedded [default config data](config/config.json) |
-| `-m`<br/>`--mode`       | dev, prod                | dev      |           | operating mode and runs the app                                          |
-| `-l`<br/>`--log-level`  | info, warn, error, fatal | info     |           | log level and runs the app                                               |
-| `--author`           | ---                      | ---      |     ✔     | prints information about the autor and exits                             |
-| `--company`          | ---                      | ---      |     ✔     | prints information about the manufacturer and exits                      |
-| `-h`<br/>`--help`       | ---                      | ---      |     ✔     | prints help text and exits                                               |
-| `--license`          | ---                      | ---      |     ✔     | prints license text and exits                                            |
-| `-v`<br/>`--version`    | ---                      | ---      |     ✔     | prints version number and exits                                          |
+| flag                                               | available values         | defaults | read only | description                                                              |
+| :------------------------------------------------- | :----------------------- | :------- | :-------: | :----------------------------------------------------------------------- |
+| <nobr>`-f`</nobr><br/><nobr>`--config-file`</nobr> | json config file path    | ---      |           | to override values of embedded [default config data](config/config.json) |
+| <nobr>`-m`</nobr><br/><nobr>`--mode`</nobr>        | dev, prod                | dev      |           | operating mode and runs the app                                          |
+| <nobr>`-l`</nobr><br/><nobr>`--log-level`</nobr>   | info, warn, error, fatal | info     |           | log level and runs the app                                               |
+| <nobr>`--author`</nobr>                            | ---                      | ---      |     ✔     | prints information about the autor and exits                             |
+| <nobr>`--company`</nobr>                           | ---                      | ---      |     ✔     | prints information about the manufacturer and exits                      |
+| <nobr>`-h`</nobr><br/><nobr>`--help`</nobr>        | ---                      | ---      |     ✔     | prints help text and exits                                               |
+| <nobr>`--license`</nobr>                           | ---                      | ---      |     ✔     | prints license text and exits                                            |
+| <nobr>`-v`</nobr><br/><nobr>`--version`</nobr>     | ---                      | ---      |     ✔     | prints version number and exits                                          |
 
