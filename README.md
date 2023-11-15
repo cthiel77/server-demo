@@ -1,7 +1,3 @@
-<style>
-nobr {white-space:nowrap;}
-</style>
-
 # server-demo
 
 ![Coverage](https://img.shields.io/badge/Coverage-79.9%25-brightgreen)
