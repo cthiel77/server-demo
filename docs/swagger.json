@@ -1,0 +1,102 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a demonstration application showing a working example of several functions and performance features.",
+        "title": "server-demo",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "email": "support@thiel-inet.de"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://opensource.org/license/bsd-3-clause/"
+        },
+        "version": "1.0"
+    },
+    "basePath": "/api",
+    "paths": {
+        "/v1/hero": {
+            "get": {
+                "description": "Get all heroes.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Hero"
+                ],
+                "summary": "get all heroes",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/db.HeroSet"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/hero/{id}": {
+            "get": {
+                "description": "Get hero by given ID.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Hero"
+                ],
+                "summary": "get hero by given ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "default": 2,
+                        "description": "Hero ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/db.HeroSet"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "db.HeroSet": {
+            "type": "object",
+            "properties": {
+                "firstName": {
+                    "type": "string",
+                    "example": "Wade"
+                },
+                "heroName": {
+                    "type": "string",
+                    "example": "Deadpool"
+                },
+                "id": {
+                    "type": "integer",
+                    "example": 123
+                },
+                "lastName": {
+                    "type": "string",
+                    "example": "Wilson"
+                }
+            }
+        }
+    }
+}

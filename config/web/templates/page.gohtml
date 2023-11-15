@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><title>{{.title}}</title><meta name="keywords" content=""><meta name="description" content=""><link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet"><link href="assets/default.css" rel="stylesheet" type="text/css" media="all"><link href="assets/fonts.css" rel="stylesheet" type="text/css" media="all"><!--[if IE 6]><link href="assets/default_ie6.css" rel="stylesheet" type="text/css" /><![endif]--></head><body>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="manifest" href="assets/site.webmanifest">
+
+<div id="header-wrapper">
+  <div id="header" class="container">
+    <div id="logo">
+      <h1><a href="/">{{.company}}</a></h1>
+</div>
+    <div id="menu">
+      {{template "page_menu" .}}
+  </div>
+</div>
+<div id="header-featured"> </div>
+
+<div id="wrapper">
+  <div id="featured-wrapper">
+    <div id="featured" class="container">
+      <div class="column1"> <span class="icon icon-flag"></span>
+        <div class="title">
+          <h2>klar.</h2>
+        </div>
+        <p>klare Code Struktur, die Wiederverwendbarkeit unterstützt und fertiger CI Pipeline</p>
+      </div>
+	  <div class="column2"> <span class="icon icon-star"></span>
+        <div class="title">
+          <h2>stark.</h2>
+        </div>
+        <p>verfügt über embbeded Resources, Run Levels, Logging und vieles mehr</p>
+      </div>
+      
+      <div class="column3"> <span class="icon icon-forward"></span>
+        <div class="title">
+          <h2>schnell.</h2>
+        </div>
+        <p>embedded Resources zusammen mit der fasthttp Integration trimmen die Performance auf Höchstgeschwindigkeit</p>
+      </div>
+      <div class="column4"> <span class="icon icon-circle-blank"></span>
+        <div class="title">
+          <h2>schick.</h2>
+        </div>
+        <p>einfache Formgebung für mehr Konzentration auf das Wesentliche</p>
+      </div>
+    </div>
+  </div>
+  
+ {{range $i, $val := .content_blocks}}
+   {{ template "content_block" $val}} 
+ {{end}}
+  
+ 
+</div>
+
+<div id="copyright" class="container">
+  <p>Created by: <a href="mailto:{{$.author_email}}?subject=%5Bserver%20demo%5D%20Kontakt%20Anfrage&body=Hi,%20">{{$.author_name}}</a></p>
+</div>
+</body></html>
+
+
+{{define "page_menu"}}
+<ul>
+{{range $i, $val := .page_menu}}
+	<li class="{{ if eq .Key $.current_page }}current_page_item{{end}}  "><a href="/{{.Key}}" accesskey="" title="">{{.Name}}</a></li>
+{{end}}
+</ul>
+{{end}}
+
+{{define "content_block"}}
+<div class="container content-block">
+    <h2>{{.Title}}</h2>
+    <span>{{.SubHead}}</span> 
+    
+	{{ if contains .Content "<p " }}
+		{{.Content | unescape}}
+	{{else}}
+	    <p>{{.Content | unescape}}</p>
+	{{end}}
+
+	{{ if .Link.URL }}
+      <a href="{{.Link.URL}}" class="button">{{.Link.Label}}</a>
+	{{end}}
+</div>
+{{end}}

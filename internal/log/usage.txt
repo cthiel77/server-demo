@@ -1,0 +1,1 @@
+the application log level (panic,fatal,error,warn,info,debug,trace)

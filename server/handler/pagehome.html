@@ -1,0 +1,152 @@
+
+    <h3>Embedded Resources</h3>
+    <p>    Alle enthaltenen Resourcen auf der gesamten Seite sind Teil des Binaries. 
+        Das bedeutet das Einbetten von Dateien wie Bildern, Konfigurationsdateien oder anderen Ressourcen direkt in das ausführbare Artefakt.
+        Diese eingebetteten Dateien werden während der Kompilierung in das Binary eingefügt und stehen dann zur Laufzeit zur Verfügung, 
+        ohne dass sie separat geladen oder auf der Festplatte gespeichert werden müssen.
+</p>
+
+    <h3>App Modes und Flags</h3>
+    <p> 
+        Betriebs Modi wurden zur simplen Steuerung von Log-Ausgaben, etc. implementiert. Sie 
+        sind dazu gedacht, gebündelt Settings (Flags) mit für den Modus optimierten Einstellungen zu setzen, um einen 
+        optimalen Betrieb zu gewährleisten. Die Einstellungen gelten zur Laufzeit, somit ist bei jeder Änderung ein Neustart erforderlich.
+        Es ist ebenfalls möglich, die Standard Settings im Zuge des Binary Builds über ld-flags zu beeinflussen.<br/>
+        Für die Ausführung und zur Unterstützung der Entwicklung sind folgende Commands implementiert:
+    </p>
+    <table class="flag-definitions">
+        <thead>
+            <tr>
+                <th>Command</th>
+                <th>mögliche Werte</th>
+                <th>default Wert</th>
+                <th>Nur lesen</th>
+                <th>Beschreibung</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>completion</td>
+                <td>bash, fish, powershell, zsh</td>
+                <td>---</td>
+                <td><span class="icon icon-check-empty"></span></td>
+                <td>Autovervollständigungs Funktionen für verschiedene Shell Oberflächen</td>
+            </tr>
+            <tr>
+                <td>config</td>
+                <td>---</td>
+                <td>---</td>
+                <td><span class="icon icon-check"></span></td>
+                <td>Gibt die aktuelle Konfiguration aus (Passwörter sind maskiert)</td>
+            </tr>
+            <tr>
+                <td>runApi</td>
+                <td>---</td>
+                <td>---</td>
+                <td><span class="icon icon-check"></span></td>
+                <td>startet den Webserver mit der aktuellen Konfiguration</td>
+            </tr>
+        </tbody>
+    </table>
+    <p> 
+        Natürlich lassen sich Commands und Flags nahezu beliebig kombinieren.<br/>
+        Da die Applikation im Grunde eine CLI Anwendung ist, kann man dafür auch Schalter - sogenannte Flags - definieren.
+        So können beispielsweise zu Debug Zwecken einzelne Settings verändert werden. (neustart erforderlich)<br/>
+        Folgende Flags sind bereits definiert:
+    </p>
+    <table class="flag-definitions">
+        <thead>
+            <tr>
+                <th>Flag</th>
+                <th>mögliche Werte</th>
+                <th>default Wert</th>
+                <th>Nur lesen</th>
+                <th>Beschreibung</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>-f, --config-file</td>
+                <td>JSON Config Datei Pfad</td>
+                <td>---</td>
+                <td><span class="icon icon-check-empty"></span></td>
+                <td>Konfigurations Datei zum Überladen der eingebetteten Default Werte</td>
+            </tr>
+            <tr>
+                <td>-m, --mode</td>
+                <td>dev, prod</td>
+                <td>dev</td>
+                <td><span class="icon icon-check-empty"></span></td>
+                <td>Applikations Modus</td>
+            </tr>
+            <tr>
+                <td>-l, --log-level</td>
+                <td>info, warn, error, fatal</td>
+                <td>info</td>
+                <td><span class="icon icon-check-empty"></span></td>
+                <td>Log Level</td>
+            </tr>
+            <tr>
+                <td>--author</td>
+                <td>---</td>
+                <td>---</td>
+                <td><span class="icon icon-check"></span></td>
+                <td>Gibt Informationen über den Autoren aus</td>
+            </tr>
+            <tr>
+                <td>--company</td>
+                <td>---</td>
+                <td>---</td>
+                <td><span class="icon icon-check"></span></td>
+                <td>Gibt Informationen über den Hersteller aus</td>
+            </tr>
+            <tr>
+                <td>-h, --help</td>
+                <td>---</td>
+                <td>---</td>
+                <td><span class="icon icon-check"></span></td>
+                <td>Hilfe Text Ausgabe </td>
+            </tr>
+            <tr>
+                <td>--license</td>
+                <td>---</td>
+                <td>---</td>
+                <td><span class="icon icon-check"></span></td>
+                <td>Gibt den Lizenz Text aus </td>
+            </tr>
+            <tr>
+                <td>-v, --version</td>
+                <td>---</td>
+                <td>---</td>
+                <td><span class="icon icon-check"></span></td>
+                <td>Gibt die Versions Nummer aus </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <h3>Fiber Framework</h3>
+    <p> <a href="https://gofiber.io/" target="_blank">Fiber</a> ist ein von <a href="https://github.com/expressjs/express" target="_blank">Express</a> inspiriertes Web-Framework, das auf <a href="https://github.com/valyala/fasthttp" target="_blank">Fasthttp</a> basiert , der schnellsten HTTP-Engine für Go . Entwickelt, um die schnelle Entwicklung ohne Speicherzuweisung und Leistung zu vereinfachen.
+        In der sich ständig weiterentwickelnden Landschaft der Webentwicklung kann die Wahl des richtigen Frameworks erhebliche Auswirkungen auf die Effizienz und den Erfolg von Projekten haben.
+        Hier kommt Fiber zum Einsatz, ein beeindruckendes Web-Framework für die Programmiersprache Go (Golang). Fiber ist für seine blitzschnelle Leistung und seine robusten Funktionen bekannt und 
+        hat sich bei Entwicklern, die leistungsstarke Webanwendungen erstellen möchten, zu einer beliebten Wahl entwickelt. In diesem Artikel werden wir in die Welt der Glasfaser eintauchen, ihre 
+        einzigartigen Eigenschaften erforschen und verstehen, warum sie im Go-Ökosystem so viel Aufmerksamkeit erregt hat.
+    </p>
+    <a href="https://gofiber.io/" class="button" target="_blank">gofiber.io</a>
+<p>&nbsp;</p>
+    <h3>Branding</h3>
+    <p>
+        ## branding
+
+Um die Anwendung zu personalisieren, sind folgende Attribute enthalten:
+
+- author name
+- author email
+- company
+- version
+- license
+
+Diese Werte können mit ld-flags während des Builds überschrieben werden.
+Einige der Werte werden in der Command Line im Hilfe Dialog angezeigt und auf der Webseite im Header und Footer Bereich.
+    </p>

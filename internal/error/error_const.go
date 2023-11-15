@@ -1,0 +1,63 @@
+package error
+
+// ERROR constants
+const (
+	StatusUnauthorized            = "401000" // user is not authorized to access
+	StatusNotAcceptable           = "406000" // provided context is completely not acceptable
+	StatusDisabled                = "406001" // resource is disabled
+	StatusDeprecated              = "406666" // resource is deprecated and will be removed in the near future
+	StatusNotAcceptableData       = "406100" // provided data is not acceptable in this context
+	StatusAlreadyExists           = "406200" // resource already exists
+	StatusNotFound                = "404000" // resource not found
+	StatusNoDocumentsFound        = "404001" // no documents found for this resource
+	StatusStringEmpty             = "404010" // given string is empty
+	StatusListEmpty               = "404011" // list of resources is empty
+	StatusForbidden               = "403000" // access to this resource is forbidden
+	StatusAccessTokenExpired      = "403001" // the access token is expired
+	StatusRefreshTokenExpired     = "403002" // the refresh token is expired
+	StatusRequestTimeout          = "408000" // the request timeout is reached
+	StatusRequestPayloadTooLarge  = "413000" // the request payload is too large
+	StatusRequestURITooLong       = "414000" // the request uri is too long
+	StatusMediaTypeNotSupported   = "415000" // the media type is not supported
+	StatusTargetNotAvailable      = "410000" // the target is not available
+	StatusPreconditionFailed      = "412000" // all preconditions failed for this resource
+	StatusRequestEntityTooLarge   = "413000" // the request entity is too large
+	StatusUnsupportedMediaType    = "415000" // the requested media type is not supported
+	StatusLocked                  = "423000" // the resource is locked
+	StatusInternalServerError     = "500000" // server says: huston, we have a problem here
+	StatusNotImplemented          = "501000" // the requested resource is not implemented, yet
+	StatusBadGateway              = "502000" // requested resource is not reachable over the used gateway
+	StatusServiceUnavailable      = "503000" // the requested resource is not available
+	StatusConnectionError         = "503100" // the connection cannot be established
+	StatusDisconnectionError      = "503110" // disconnection failed
+	StatusServiceNotReachable     = "503200" // the requested service is not reachable
+	StatusServiceQOSError         = "503300" // the requested service is blocked by quality of service rules
+	StatusGatewayTimeout          = "504000" // the gateway responds with a timeout
+	StatusInsufficientStorage     = "507000" // no space left on storage
+	StatusLoopDetected            = "508000" // we detected a loop in this resource
+	StatusQueryError              = "602000" // the query is invalid
+	StatusQueryTooManyConnections = "602001" // server complains too many connections
+	StatusQueryDeleteError        = "602100" // delete action failed
+	StatusQueryDeleteBulkError    = "602110" // delete bulk action failed
+	StatusQueryReadError          = "602200" // read action failed
+	StatusQueryWriteError         = "602300" // write action failed
+	StatusQueryUpdateError        = "602400" // update action failed
+	StatusBusError                = "603000" // bus communication error
+	StatusBusConsumeError         = "603100" // bus consumer error occurred
+	StatusBusConsumeBindError     = "603110" // bus consumer error occurred while binding
+	StatusBusExchangeError        = "603200" // bus exchange error occurred
+	StatusBusPublishError         = "603300" // bus publish error occurred
+	StatusBusQueueError           = "603400" // bus queue error occurred
+	StatusBusQueueDeclareError    = "603410" // bus queue declaration error occurred
+	StatusBusQueueBindError       = "603420" // bus queue binding error occurred
+	StatusFileError               = "604000" // file error occurred
+	StatusFileReadError           = "604100" // file read error occurred
+	StatusFileWriteError          = "604200" // file write error occurred
+	StatusFileNotFound            = "604300" // file not found
+	StatusConfigFileNameNotSet    = "604400" // config file name not set
+	StatusDataJSONError           = "605000" // data JSON error occurred
+	StatusDataJSONEncodeError     = "605100" // data JSON encoding error occurred
+	StatusDataJSONDecodeError     = "605200" // data JSON decoding error occurred
+	StatusEmptyResponse           = "608000" // the response of the target is empty
+	StatusUnexpectedError         = "666666" // a unexpected error occured
+)
