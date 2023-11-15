@@ -99,6 +99,17 @@ the website layout is based on generic css styles (breadth by [templated.co](htt
 
 the api gives a short view on how a db (simulated by [go-memdb](https://github.com/hashicorp/go-memdb) to keep all inside this binary) can be used to provide a very simple rest api. 
 
+### swagger
+
+the swagger docs are provided by [fiber-swagger](https://github.com/arsmn/fiber-swagger).
+
 > ℹ︎ including swagger docs are available in `dev mode` only
+
+to generate and update swagger docs, you need an additional tool. Please make sure your `$GOPATH/bin` path is defined inside your `$PATH` variable
+
+```
+$> go install github.com/swaggo/swag/cmd/swag@latest
+```
+
 
 ![swagger](docs/img/server-demo-swagger.png)
