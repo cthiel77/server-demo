@@ -54,7 +54,7 @@ Some of these values are shown on help screen on the cli or on the website in he
 
 > cli help output
 
-```bash
+```
 INFO[2023-11-15T06:50:40.735] loaded config data                            app=server-demo
                   _         
   _   _    ___   | |   ___  
