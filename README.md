@@ -51,3 +51,41 @@ to personalize the binary artifact, we added values like:
 
 These values can be overridden at build time by ld-flags.
 Some of these values are shown on help screen on the cli or on the website in header and footer sections.
+
+> cli help output
+
+```bash
+INFO[2023-11-15T06:50:40.735] loaded config data                            app=server-demo
+                  _         
+  _   _    ___   | |   ___  
+ | | | |  / _ \  | |  / _ \ 
+ | |_| | | (_) | | | | (_) |
+  \__, |  \___/  |_|  \___/ 
+  |___/                     
+---[ server-demo ]---
+
+©2023 yolo
+
+Usage:
+  server-demo [command]
+
+Available Commands:
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+  runApi      Serves the API
+
+Flags:
+      --author               
+      --company              
+  -f, --config-file string   There are 3 ways to load config data: 
+                             1. File compiled into binary (embed as defaults)
+                             2. file in config folder or root path of the binary, 
+                             3. load file by flag, 
+  -h, --help                 help for server-demo
+      --license              
+  -l, --log-level string      (default "info")
+  -m, --mode string          the application mode (dev,prod) (default "dev")
+  -v, --version
+
+Use "server-demo [command] --help" for more information about a command.
+```
