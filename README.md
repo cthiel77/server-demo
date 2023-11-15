@@ -21,12 +21,12 @@ Operating modes have been implemented for simple control of log outputs, etc. Th
 
 | flag                 | available values         | defaults | read only | description                                                              |
 | :------------------- | :----------------------- | :------- | :-------: | :----------------------------------------------------------------------- |
-| `-f` `--config-file` | json config file path    | ---      |           | to override values of embedded [default config data](config/config.json) |
-| `-m`, `--mode`       | dev, prod                | dev      |           | operating mode and runs the app                                          |
-| `-l`, `--log-level`  | info, warn, error, fatal | info     |           | log level and runs the app                                               |
+| `-f`<br/>`--config-file` | json config file path    | ---      |           | to override values of embedded [default config data](config/config.json) |
+| `-m`<br/>`--mode`       | dev, prod                | dev      |           | operating mode and runs the app                                          |
+| `-l`<br/>`--log-level`  | info, warn, error, fatal | info     |           | log level and runs the app                                               |
 | `--author`           | ---                      | ---      |     ✔     | prints information about the autor and exits                             |
 | `--company`          | ---                      | ---      |     ✔     | prints information about the manufacturer and exits                      |
-| `-h`, `--help`       | ---                      | ---      |     ✔     | prints help text and exits                                               |
+| `-h`<br/>`--help`       | ---                      | ---      |     ✔     | prints help text and exits                                               |
 | `--license`          | ---                      | ---      |     ✔     | prints license text and exits                                            |
-| `-v`, `--version`    | ---                      | ---      |     ✔     | prints version number and exits                                          |
+| `-v`<br/>`--version`    | ---                      | ---      |     ✔     | prints version number and exits                                          |
 
