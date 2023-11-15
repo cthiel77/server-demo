@@ -11,18 +11,13 @@
         Betriebs Modi wurden zur simplen Steuerung von Log-Ausgaben, etc. implementiert. Sie 
         sind dazu gedacht, gebündelt Settings (Flags) mit für den Modus optimierten Einstellungen zu setzen, um einen 
         optimalen Betrieb zu gewährleisten. Die Einstellungen gelten zur Laufzeit, somit ist bei jeder Änderung ein Neustart erforderlich.
-        Es ist ebenfalls möglich, die Standard Settings im Zuge des Binary Builds über ld-flags zu beeinflussen.
-    </p>
-
-    <p> 
-        Da die Applikation im Grunde eine CLI Anwendung ist, kann man dafür auch Schalter - sogenannte Flags - definieren.
-        So können beispielsweise zu Debug Zwecken einzelne Settings verändert werden. (neustart erforderlich)<br/>
-        Folgende Flags sind bereits definiert:
+        Es ist ebenfalls möglich, die Standard Settings im Zuge des Binary Builds über ld-flags zu beeinflussen.<br/>
+        Für die Ausführung und zur Unterstützung der Entwicklung sind folgende Commands implementiert:
     </p>
     <table class="flag-definitions">
         <thead>
             <tr>
-                <th>flag</th>
+                <th>Command</th>
                 <th>mögliche Werte</th>
                 <th>default Wert</th>
                 <th>Nur lesen</th>
@@ -30,6 +25,53 @@
             </tr>
         </thead>
         <tbody>
+            <tr>
+                <td>completion</td>
+                <td>bash, fish, powershell, zsh</td>
+                <td>---</td>
+                <td><span class="icon icon-check-empty"></span></td>
+                <td>Autovervollständigungs Funktionen für verschiedene Shell Oberflächen</td>
+            </tr>
+            <tr>
+                <td>config</td>
+                <td>---</td>
+                <td>---</td>
+                <td><span class="icon icon-check"></span></td>
+                <td>Gibt die aktuelle Konfiguration aus (Passwörter sind maskiert)</td>
+            </tr>
+            <tr>
+                <td>runApi</td>
+                <td>---</td>
+                <td>---</td>
+                <td><span class="icon icon-check"></span></td>
+                <td>startet den Webserver mit der aktuellen Konfiguration</td>
+            </tr>
+        </tbody>
+    </table>
+    <p> 
+        Natürlich lassen sich Commands und Flags nahezu beliebig kombinieren.<br/>
+        Da die Applikation im Grunde eine CLI Anwendung ist, kann man dafür auch Schalter - sogenannte Flags - definieren.
+        So können beispielsweise zu Debug Zwecken einzelne Settings verändert werden. (neustart erforderlich)<br/>
+        Folgende Flags sind bereits definiert:
+    </p>
+    <table class="flag-definitions">
+        <thead>
+            <tr>
+                <th>Flag</th>
+                <th>mögliche Werte</th>
+                <th>default Wert</th>
+                <th>Nur lesen</th>
+                <th>Beschreibung</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>-f, --config-file</td>
+                <td>JSON Config Datei Pfad</td>
+                <td>---</td>
+                <td><span class="icon icon-check-empty"></span></td>
+                <td>Konfigurations Datei zum Überladen der eingebetteten Default Werte</td>
+            </tr>
             <tr>
                 <td>-m, --mode</td>
                 <td>dev, prod</td>
@@ -82,6 +124,8 @@
         </tbody>
     </table>
 
+    <p>&nbsp;</p>
+
     <h3>Fiber Framework</h3>
     <p> <a href="https://gofiber.io/" target="_blank">Fiber</a> ist ein von <a href="https://github.com/expressjs/express" target="_blank">Express</a> inspiriertes Web-Framework, das auf <a href="https://github.com/valyala/fasthttp" target="_blank">Fasthttp</a> basiert , der schnellsten HTTP-Engine für Go . Entwickelt, um die schnelle Entwicklung ohne Speicherzuweisung und Leistung zu vereinfachen.
         In der sich ständig weiterentwickelnden Landschaft der Webentwicklung kann die Wahl des richtigen Frameworks erhebliche Auswirkungen auf die Effizienz und den Erfolg von Projekten haben.
@@ -90,3 +134,19 @@
         einzigartigen Eigenschaften erforschen und verstehen, warum sie im Go-Ökosystem so viel Aufmerksamkeit erregt hat.
     </p>
     <a href="https://gofiber.io/" class="button" target="_blank">gofiber.io</a>
+<p>&nbsp;</p>
+    <h3>Branding</h3>
+    <p>
+        ## branding
+
+Um die Anwendung zu personalisieren, sind folgende Attribute enthalten:
+
+- author name
+- author email
+- company
+- version
+- license
+
+Diese Werte können mit ld-flags während des Builds überschrieben werden.
+Einige der Werte werden in der Command Line im Hilfe Dialog angezeigt und auf der Webseite im Header und Footer Bereich.
+    </p>
