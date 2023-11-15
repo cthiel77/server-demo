@@ -19,7 +19,7 @@ var (
 	flagPrintAuthorCompany bool
 	flagPrintVersion       bool
 
-	appName        = "server demo"
+	appName        = "server-demo"
 	appDescription = "a server application demo including embedded sources"
 	//App meta data
 	App = model.AppMeta{

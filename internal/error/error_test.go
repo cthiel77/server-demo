@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"testing"
 
-	omegaError "github.com/cthiel77/server-demo/internal/error"
+	defaultError "github.com/cthiel77/server-demo/internal/error"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -20,8 +20,8 @@ func getStandardError() error {
 
 func TestNewError(t *testing.T) {
 
-	err := omegaError.NewError("1699199734", "404", "new error")
-	expectedCode := "404"
+	err := defaultError.NewError("1699199734", defaultError.StatusNotFound, "new error")
+	expectedCode := defaultError.StatusNotFound
 	if err.GetCode() != expectedCode {
 		t.Errorf("wrong code %s, expected %s", err.GetCode(), expectedCode)
 	}
@@ -29,7 +29,7 @@ func TestNewError(t *testing.T) {
 }
 
 func TestNewErrorWithTrace(t *testing.T) {
-	err := omegaError.NewErrorWithTrace("1699199739", "404", "new error", "trace")
+	err := defaultError.NewErrorWithTrace("1699199739", defaultError.StatusNotFound, "new error", "trace")
 	expectedTrace := "trace"
 	if err.Trace != expectedTrace {
 		t.Errorf("wrong code %q, expected %q", err.Trace, expectedTrace)
@@ -38,15 +38,15 @@ func TestNewErrorWithTrace(t *testing.T) {
 
 func TestFromGoError(t *testing.T) {
 	e := getStandardError()
-	err := omegaError.FromGoError("1699199743", "404", e)
-	expectedCode := "404"
+	err := defaultError.FromGoError("1699199743", defaultError.StatusNotFound, e)
+	expectedCode := defaultError.StatusNotFound
 	if err.GetCode() != expectedCode {
 		t.Errorf("wrong code %s, expected %s", err.GetCode(), expectedCode)
 	}
 }
 
 func TestToString(t *testing.T) {
-	err := omegaError.FromGoError("1699199747", "404", getStandardError())
+	err := defaultError.FromGoError("1699199747", defaultError.StatusNotFound, getStandardError())
 	expected := "[ERROR 404"
 	s := err.ToString()
 	if m, _ := regexp.MatchString(`^\[ERROR\s404`, s); !m {
@@ -55,7 +55,7 @@ func TestToString(t *testing.T) {
 }
 
 func TestErrorNil(t *testing.T) {
-	err := omegaError.FromGoError("1699199751", "404", nil)
+	err := defaultError.FromGoError("1699199751", defaultError.StatusNotFound, nil)
 	expected := "nil error given"
 	s := err.ToString()
 	assert.Contains(t, s, expected)
@@ -67,14 +67,14 @@ func TestFromErrorList(t *testing.T) {
 	type errorTestCases struct {
 		description string // add a description for the
 		// case to have transparency
-		input       *[]omegaError.Error
+		input       *[]defaultError.Error
 		expectError bool
 	}
 
 	for _, scenario := range []errorTestCases{
 		{
 			description: "default",
-			input: &[]omegaError.Error{
+			input: &[]defaultError.Error{
 				{Domain: "1699199755", Code: "400", Message: "error 1"},
 				{Domain: "1699199760", Code: "500", Message: "error 2"},
 			},
@@ -82,7 +82,7 @@ func TestFromErrorList(t *testing.T) {
 		},
 		{
 			description: "empty list",
-			input:       &[]omegaError.Error{},
+			input:       &[]defaultError.Error{},
 			expectError: false,
 		},
 		{
@@ -94,7 +94,7 @@ func TestFromErrorList(t *testing.T) {
 		t.Run(scenario.description, func(t *testing.T) {
 			// test the function
 
-			err := omegaError.FromErrorList("1699199764", "400", scenario.input)
+			err := defaultError.FromErrorList("1699199764", "400", scenario.input)
 
 			if scenario.expectError {
 				assert.Error(t, err)

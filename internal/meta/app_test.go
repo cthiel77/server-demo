@@ -1,33 +1,34 @@
 // Package meta app file defines variables.
 //
 // provides variables to store application info and getters to give read access
-package meta
+package meta_test
 
 import (
 	"testing"
 
+	"github.com/cthiel77/server-demo/internal/meta"
 	catalogModel "github.com/cthiel77/server-demo/internal/meta/model/catalog"
 )
 
 func TestGetAppNameInit(t *testing.T) {
-	value := GetAppName()
-	expected := "server demo"
+	value := meta.GetAppName()
+	expected := meta.App.Name
 	if value != expected {
 		t.Errorf("wrong value %s, expected %s", value, expected)
 	}
 }
 
 func TestGetAppDescInit(t *testing.T) {
-	value := GetAppDescription()
-	expected := "a server application demo including embedded sources"
+	value := meta.GetAppDescription()
+	expected := meta.App.Description
 	if value != expected {
 		t.Errorf("wrong value %s, expected %s", value, expected)
 	}
 }
 
 func TestGetAppLicenseInit(t *testing.T) {
-	value := GetAppLicense()
-	expected := "undefined license"
+	value := meta.GetAppLicense()
+	expected := meta.Extended.License
 	if value != expected {
 		t.Errorf("wrong value %s, expected %s", value, expected)
 	}
@@ -35,7 +36,7 @@ func TestGetAppLicenseInit(t *testing.T) {
 
 func TestInitCatalog(t *testing.T) {
 	cat := catalogModel.App{}
-	e := InitAppCatalog(`{
+	e := meta.InitAppCatalog(`{
 		"global": {
 			"key": "quote_lib",
 			"label": "Zitat Bibliothek",
