@@ -1,7 +1,16 @@
 # server-demo
-![Coverage](https://img.shields.io/badge/Coverage-79.9%25-brightgreen)
-a server application demo
 
+![Coverage](https://img.shields.io/badge/Coverage-79.9%25-brightgreen)
+
+> a server application demo
+
+This is a demonstration application showing a working example of several functions and performance features.
+
+- embedded resources
+- webserver / rest api
+- cli commands and flags
+- config file embed and override function
+- binary branding
 
 ## flags and operating modes
 
@@ -30,3 +39,15 @@ Operating modes have been implemented for simple control of log outputs, etc. Th
 | <nobr>`--license`</nobr>                           | ---                      | ---      |     ✔     | prints license text and exits                                            |
 | <nobr>`-v`</nobr><br/><nobr>`--version`</nobr>     | ---                      | ---      |     ✔     | prints version number and exits                                          |
 
+## branding
+
+to personalize the binary artifact, we added values like:
+
+- author name
+- author email
+- company
+- version
+- license
+
+These values can be overridden at build time by ld-flags.
+Some of these values are shown on help screen on the cli or on the website in header and footer sections.
