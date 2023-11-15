@@ -88,3 +88,17 @@ Flags:
 
 Use "server-demo [command] --help" for more information about a command.
 ```
+
+## website
+
+the website layout is based on generic css styles (breadth by [templated.co](https://templated.co/breadth/)) and made dynamic fiber's implementation of go templates.
+
+![site](docs/img/server-demo-website.png)
+
+## api
+
+the api gives a short view on how a db (simulated by [go-memdb](https://github.com/hashicorp/go-memdb) to keep all inside this binary) can be used to provide a very simple rest api. 
+
+> ℹ︎ including swagger docs are available in `dev mode` only
+
+![swagger](docs/img/server-demo-swagger.png)
