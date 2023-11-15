@@ -111,5 +111,15 @@ to generate and update swagger docs, you need an additional tool. Please make su
 $> go install github.com/swaggo/swag/cmd/swag@latest
 ```
 
+after that you can build your docs with this command
+
+```
+$> swag init
+```
+
+now you restart the app and enjoy the new features you just created.
 
 ![swagger](docs/img/server-demo-swagger.png)
+
+
+that's all, folks. Happy coding!
