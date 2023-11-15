@@ -77,10 +77,9 @@ Available Commands:
 Flags:
       --author               
       --company              
-  -f, --config-file string   There are 3 ways to load config data: 
+  -f, --config-file string   There are 2 ways to load config data: 
                              1. File compiled into binary (embed as defaults)
-                             2. file in config folder or root path of the binary, 
-                             3. load file by flag, 
+                             2. load file by flag, 
   -h, --help                 help for server-demo
       --license              
   -l, --log-level string      (default "info")
