@@ -45,6 +45,12 @@ const docTemplate = `{
                                 "$ref": "#/definitions/db.HeroSet"
                             }
                         }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/response.ErrorData"
+                        }
                     }
                 }
             }
@@ -78,6 +84,12 @@ const docTemplate = `{
                         "schema": {
                             "$ref": "#/definitions/db.HeroSet"
                         }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/response.ErrorData"
+                        }
                     }
                 }
             }
@@ -102,6 +114,19 @@ const docTemplate = `{
                 "lastName": {
                     "type": "string",
                     "example": "Wilson"
+                }
+            }
+        },
+        "response.ErrorData": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "example": "10001"
+                },
+                "msg": {
+                    "type": "string",
+                    "example": "something went wrong"
                 }
             }
         }
