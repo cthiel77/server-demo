@@ -25,3 +25,4 @@ jobs:
           increment: patch
           committer_name: Carsten Thiel
           committer_email: dev@thiel-inet.de
+          release_notes: true
