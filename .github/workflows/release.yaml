@@ -27,25 +27,25 @@ jobs:
       run: echo APP_VERSION=$(echo ${GITHUB_REF} | rev | cut -d'/' -f 1 | rev ) >> ${GITHUB_ENV}
     
     - name: Set BUILD_TIME env
-      run: echo BUILD_TIME=$(date -u +%y%m%d%H%M%S)
+      run: echo BUILD_TIME=`date -u +%y%m%d%H%M%S`
 
     - name: Set APP_LICENSE env
-      run: echo APP_LICENSE=$(shell cat ./LICENSE | tr -d '"')
+      run: echo APP_LICENSE=`cat ./LICENSE | tr -d '"'`
 
     - name: Set APP_NAME env
       run: echo APP_NAME=server-demo
 
     - name: Set APP_DESCRIPTION env
-      run: echo APP_DESCRIPTION="a demonstration application showing a working example of several functions and performance features"
+      run: echo APP_DESCRIPTION=a demonstration application showing a working example of several functions and performance features
     
     - name: Set AUTHOR_NAME env
-      run: echo AUTHOR_NAME="Carsten Thiel"
+      run: echo AUTHOR_NAME=Carsten Thiel
 
     - name: Set AUTHOR_EMAIL env
-      run: echo AUTHOR_EMAIL="dev@thiel-inet.de"
+      run: echo AUTHOR_EMAIL=dev@thiel-inet.de
 
     - name: Set AUTHOR_COMPANY env
-      run: echo AUTHOR_COMPANY="ct"
+      run: echo AUTHOR_COMPANY=ct
 
     - name: Environment Printer
       uses: managedkaos/print-env@v1.0
