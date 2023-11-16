@@ -60,7 +60,6 @@ jobs:
         binary_name: "${{ env.APP_NAME }}"
         build_flags: -v -a -installsuffix cgo
         ldflags: >
-            -static
             -X "internal/cfg.ModeDefault=prod"
             -X "internal/log.LogLevelDefault=error"
             -X "internal/meta.versionID=${{ env.APP_VERSION }}"
