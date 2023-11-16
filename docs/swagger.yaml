@@ -15,6 +15,15 @@ definitions:
         example: Wilson
         type: string
     type: object
+  response.ErrorData:
+    properties:
+      code:
+        example: "10001"
+        type: string
+      msg:
+        example: something went wrong
+        type: string
+    type: object
 info:
   contact:
     email: support@thiel-inet.de
@@ -42,6 +51,10 @@ paths:
             items:
               $ref: '#/definitions/db.HeroSet'
             type: array
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorData'
       summary: get all heroes
       tags:
       - Hero
@@ -64,6 +77,10 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/db.HeroSet'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorData'
       summary: get hero by given ID
       tags:
       - Hero
