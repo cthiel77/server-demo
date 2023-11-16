@@ -58,7 +58,7 @@ jobs:
         goversion: "https://dl.google.com/go/go1.21.3.linux-amd64.tar.gz"
         project_path: "."
         binary_name: "${{ env.APP_NAME }}"
-        build_flags: -v -a -installsuffix cgo -w
+        build_flags: -v -a -installsuffix cgo
         ldflags: >
             -static
             -X "internal/cfg.ModeDefault=prod"
