@@ -1,8 +1,10 @@
 # .github/workflows/release.yaml
 
-on: push
-#   release:
-#     types: [created]
+#enable to test -> push does 
+# on: push
+on: 
+  release:
+    types: [created]
 
 permissions:
     contents: write
