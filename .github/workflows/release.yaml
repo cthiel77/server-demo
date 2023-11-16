@@ -25,33 +25,20 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set APP_VERSION env
-      run: echo APP_VERSION=$(echo ${GITHUB_REF} | rev | cut -d'/' -f 1 | rev ) >> ${GITHUB_ENV}
+    - name: Set BUILD env data
+      run: |
+          {
+           echo APP_VERSION=$(echo ${GITHUB_REF} | rev | cut -d'/' -f 1 | rev )
+           echo BUILD_TIME=`date -u +%y%m%d%H%M%S`
+           echo APP_LICENSE=`cat ./LICENSE | tr -d '"'`
+           echo APP_NAME=server-demo
+           echo APP_DESCRIPTION=a demonstration application showing a working example of several functions and performance features
+           echo AUTHOR_NAME=Carsten Thiel
+           echo AUTHOR_EMAIL=dev@thiel-inet.de
+           echo AUTHOR_COMPANY=ct
+           echo PROJECT_NAMESPACE_PREFIX=github.com/${GITHUB_REPOSITORY}
+          } >> "$GITHUB_ENV"
     
-    - name: Set BUILD_TIME env
-      run: echo BUILD_TIME=`date -u +%y%m%d%H%M%S`
-
-    - name: Set APP_LICENSE env
-      run: echo APP_LICENSE=`cat ./LICENSE | tr -d '"'`
-
-    - name: Set APP_NAME env
-      run: echo APP_NAME=server-demo
-
-    - name: Set APP_DESCRIPTION env
-      run: echo APP_DESCRIPTION=a demonstration application showing a working example of several functions and performance features
-    
-    - name: Set AUTHOR_NAME env
-      run: echo AUTHOR_NAME=Carsten Thiel
-
-    - name: Set AUTHOR_EMAIL env
-      run: echo AUTHOR_EMAIL=dev@thiel-inet.de
-
-    - name: Set AUTHOR_COMPANY env
-      run: echo AUTHOR_COMPANY=ct
-
-    - name: Set PROJECT_NAMESPACE_PREFIX env
-      run: echo PROJECT_NAMESPACE_PREFIX=github.com/${GITHUB_REPOSITORY}
-
     - name: Environment Printer
       uses: managedkaos/print-env@v1.0
 
