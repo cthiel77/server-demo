@@ -49,6 +49,9 @@ jobs:
     - name: Set AUTHOR_COMPANY env
       run: echo AUTHOR_COMPANY=ct
 
+    - name: Set PROJECT_NAMESPACE_PREFIX env
+      run: echo PROJECT_NAMESPACE_PREFIX=github.com/$(echo ${GITHUB_REPOSITORY})
+
     - name: Environment Printer
       uses: managedkaos/print-env@v1.0
 
@@ -62,13 +65,13 @@ jobs:
         binary_name: "${{ env.APP_NAME }}"
         build_flags: -v -a -installsuffix cgo
         ldflags: >
-            -X "internal/cfg.ModeDefault=prod"
-            -X "internal/log.LogLevelDefault=error"
-            -X "internal/meta.versionID=${{ env.APP_VERSION }}"
-            -X "internal/meta.buildTime=${{ env.BUILD_TIME }}"
-            -X "internal/meta.appName=${{ env.APP_NAME }}"
-            -X "internal/meta.appDescription=${{ env.APP_DESCRIPTION }}"
-            -X "internal/meta.authorName=${{ env.AUTHOR_NAME }}"
-            -X "internal/meta.authorEmail=${{ env.AUTHOR_EMAIL }}"
-            -X "internal/meta.authorCompany=${{ env.AUTHOR_COMPANY }}"
-            -X "internal/meta.extLicense=${{ env.APP_LICENSE }}"
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/cfg.ModeDefault=prod"
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/log.LogLevelDefault=error"
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.versionID=${{ env.APP_VERSION }}"
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.buildTime=${{ env.BUILD_TIME }}"
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.appName=${{ env.APP_NAME }}"
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.appDescription=${{ env.APP_DESCRIPTION }}"
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.authorName=${{ env.AUTHOR_NAME }}"
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.authorEmail=${{ env.AUTHOR_EMAIL }}"
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.authorCompany=${{ env.AUTHOR_COMPANY }}"
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.extLicense=${{ env.APP_LICENSE }}"
