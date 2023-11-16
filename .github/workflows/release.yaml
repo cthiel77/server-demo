@@ -1,10 +1,10 @@
 # .github/workflows/release.yaml
 
 #enable to test -> push does 
-# on: push
-on: 
-  release:
-    types: [created]
+on: push
+# on: 
+#   release:
+#     types: [created]
 
 permissions:
     contents: write
@@ -65,6 +65,7 @@ jobs:
         binary_name: "${{ env.APP_NAME }}"
         build_flags: -v -a -installsuffix cgo
         ldflags: >
+            -s -w -extldflags ' "-static"
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/cfg.ModeDefault=prod"
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/log.LogLevelDefault=error"
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.versionID=${{ env.APP_VERSION }}"
@@ -74,4 +75,4 @@ jobs:
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.authorName=${{ env.AUTHOR_NAME }}"
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.authorEmail=${{ env.AUTHOR_EMAIL }}"
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.authorCompany=${{ env.AUTHOR_COMPANY }}"
-            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.extLicense=${{ env.APP_LICENSE }}"
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.extLicense=${{ env.APP_LICENSE }}"'
