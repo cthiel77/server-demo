@@ -66,6 +66,7 @@ jobs:
         build_flags: -v -a -installsuffix cgo
         ldflags: >
             -s -w 
+            -extldflags
             -static
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/cfg.ModeDefault=prod"
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/log.LogLevelDefault=error"
