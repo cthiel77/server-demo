@@ -50,7 +50,7 @@ jobs:
       run: echo AUTHOR_COMPANY=ct
 
     - name: Set PROJECT_NAMESPACE_PREFIX env
-      run: echo PROJECT_NAMESPACE_PREFIX=github.com/$(echo ${GITHUB_REPOSITORY})
+      run: echo PROJECT_NAMESPACE_PREFIX=github.com/${GITHUB_REPOSITORY}
 
     - name: Environment Printer
       uses: managedkaos/print-env@v1.0
@@ -65,7 +65,8 @@ jobs:
         binary_name: "${{ env.APP_NAME }}"
         build_flags: -v -a -installsuffix cgo
         ldflags: >
-            -s -w -extldflags ' "-static"
+            -s -w 
+            -static
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/cfg.ModeDefault=prod"
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/log.LogLevelDefault=error"
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.versionID=${{ env.APP_VERSION }}"
@@ -75,4 +76,5 @@ jobs:
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.authorName=${{ env.AUTHOR_NAME }}"
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.authorEmail=${{ env.AUTHOR_EMAIL }}"
             -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.authorCompany=${{ env.AUTHOR_COMPANY }}"
-            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.extLicense=${{ env.APP_LICENSE }}"'
+            -X "${{ env.PROJECT_NAMESPACE_PREFIX }}/internal/meta.extLicense=${{ env.APP_LICENSE }}"
+            
