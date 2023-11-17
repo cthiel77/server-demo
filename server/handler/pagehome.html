@@ -164,8 +164,20 @@
 <p>
     Diese Demo verfügt ebenfalls über eine beispielhafte Rest Api. Sie liest Datensätze aus einer <a
         href="https://github.com/hashicorp/go-memdb" target="_blank">Datenbank</a>.
-    Die Api ist zu erreichen unter &quot;{{.api_url}}&quot;. Weitere Information zu Endpunkten sind in der
-Readme oder in der <a href="{{.swagger_url}}" target="_blank">Swagger Dokumentation</a>(nur im Dev Modus aktiv) zu
-finden.
-
+    Die Api ist aktuell erreichbar unter <span class="code">{{.apiURL}}</span>. Weitere Information zu Endpunkten sind
+    in der
+    Readme enthalten.
 </p>
+
+{{ if .devModeEnabled }}
+<p>
+    <i class=" icon icon-info-sign"></i> der Dev Mode ist im Moment aktiv. Sie können die <a href="{{.swaggerURL}}"
+        target="_blank">Swagger Dokumentation</a> nutzen.
+</p>
+{{else}}
+<p>
+    aktuell ist der Dev Mode inaktiv. Wenn Sie die Swagger Dokumentation nutzen möchten, starten Sie die Applikation mit
+    dem Argument <span class="code">-m dev</span> neu.
+    Wenn Sie diese Seite neu laden, werden Sie weitere Informationen erhalten.
+</p>
+{{end}}

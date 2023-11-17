@@ -851,6 +851,15 @@ ul.contact li a.icon-rss:before {
   color: #a2a2a2;
 }
 
+.content-block span.code {
+  font-family: monospace;
+  font-size: 0.8em;
+  display: inline-block;
+  text-transform: none;
+  margin: auto;
+  padding: auto;
+}
+
 .content-block .button {
   margin-top: 2em;
 }
