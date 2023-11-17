@@ -562,6 +562,33 @@ ul.contact li a.icon-rss:before {
 }
 
 /*********************************************************************************/
+/* Menubar                                                                     */
+/*********************************************************************************/
+
+#menubar {
+  position: fixed;
+  right: -1em;
+  top: 50%;
+}
+
+#menubar > li > a {
+  height: 3em;
+  width: 4em;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: lightsteelblue;
+  background-position-x: 0;
+  color: white;
+  text-decoration: none;
+  border-radius: 11px;
+}
+
+#menubar > li > a.cta-swagger {
+  background-image: url(images/logo-swagger.png);
+}
+
+/*********************************************************************************/
 /* Copyright                                                                     */
 /*********************************************************************************/
 
