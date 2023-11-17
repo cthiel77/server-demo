@@ -1,6 +1,6 @@
 # server-demo
 
-![Coverage](https://img.shields.io/badge/Coverage-77.0%25-brightgreen)
+![Coverage](https://img.shields.io/badge/Coverage-76.8%25-brightgreen)
 
 > a server application demo
 
