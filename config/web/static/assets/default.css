@@ -128,7 +128,7 @@ table.flag-definitions > tbody > tr > td:nth-child(3) {
 }
 
 table.flag-definitions > tbody > tr > td:nth-child(4) {
-	text-align: center;
+  text-align: center;
 }
 
 table > tbody > tr > td > span.icon {
@@ -584,6 +584,10 @@ ul.contact li a.icon-rss:before {
   color: rgba(0, 0, 0, 0.6);
 }
 
+#copyright img.logo {
+  width: 6em;
+}
+
 /*********************************************************************************/
 /* Featured                                                                      */
 /*********************************************************************************/
@@ -851,8 +855,8 @@ ul.contact li a.icon-rss:before {
   margin-top: 2em;
 }
 
-.content-block table{
-	margin-left: auto;
+.content-block table {
+  margin-left: auto;
   margin-right: auto;
 }
 

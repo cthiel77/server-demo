@@ -94,32 +94,3 @@ func TestHeroDataQueryInsert(t *testing.T) {
 
 }
 
-// func TestHeroDataQuerySelect(t *testing.T) {
-
-// 	tables := []struct {
-// 		firstName string
-// 		lastName  string
-// 		expectErr bool
-// 	}{
-// 		{"Tony", "Stark", false},
-// 		{"de2", "", true},
-// 		{"deu", "", true},
-// 		{"DE", "DE", false},
-// 		{"XX", "", true},
-// 		{"", "", true},
-// 	}
-
-// 	for _, scenario := range tables {
-// 		v, err := db.Hero.GetByISO2(scenario.iso)
-// 		if err != nil {
-// 			if scenario.expectErr {
-// 				t.Logf("success! %q expected this error: %+v", scenario.iso, err)
-// 			} else {
-// 				t.Errorf("failure! %+v", err)
-// 			}
-// 		} else {
-// 			assert.Equal(t, scenario.expectedISO, v.ISO)
-// 		}
-// 	}
-
-// }
