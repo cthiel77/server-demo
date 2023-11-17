@@ -84,14 +84,13 @@ func RunAPIServer(args []string) {
 
 		//enable swagger
 		config.Logger.Info("enabling swagger")
-		apiV1.Get("swagger", swagger.New(swagger.Config{
-			Title:       meta.GetAppName(),
-			DeepLinking: true,
-		}))
-		apiV1.Get("swagger/*", swagger.New(swagger.Config{
-			Title:       meta.GetAppName(),
-			DeepLinking: true,
-		}))
+		swgCfg := swagger.Config{
+			Title:           meta.GetAppName(),
+			DeepLinking:     true,
+			TryItOutEnabled: true,
+		}
+		apiV1.Get("swagger", swagger.New(swgCfg))
+		apiV1.Get("swagger/*", swagger.New(swgCfg))
 	}
 	//Handle not founds
 	apiV1.Use(handler.Api404)

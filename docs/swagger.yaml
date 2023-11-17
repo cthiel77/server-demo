@@ -34,8 +34,6 @@ info:
     name: Apache 2.0
     url: https://opensource.org/license/bsd-3-clause/
   termsOfService: http://swagger.io/terms/
-  title: server-demo
-  version: "1.0"
 paths:
   /v1/hero:
     get:

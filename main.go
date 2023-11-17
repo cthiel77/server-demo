@@ -7,7 +7,7 @@ import (
 
 // @title server-demo
 // @version 1.0
-// @description This is a demonstration application showing a working example of several functions and performance features.
+// @description a demonstration application showing a working example of several functions and performance features.
 // @termsOfService http://swagger.io/terms/
 // @contact.name API Support
 // @contact.email support@thiel-inet.de
