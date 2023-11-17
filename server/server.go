@@ -93,6 +93,8 @@ func RunAPIServer(args []string) {
 			DeepLinking: true,
 		}))
 	}
+	//Handle not founds
+	apiV1.Use(handler.Api404)
 
 	//▽
 	//▽  static files
