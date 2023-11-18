@@ -6,7 +6,6 @@ body {
 body {
   margin: 0px;
   padding: 0px;
-  background: #383838;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 11pt;
   font-weight: 300;
@@ -505,7 +504,7 @@ ul.contact li a.icon-rss:before {
 /* Page                                                                          */
 /*********************************************************************************/
 
-#wrapper {
+.wrapper {
   background: #fff;
 }
 
@@ -568,7 +567,7 @@ ul.contact li a.icon-rss:before {
 #menubar {
   position: fixed;
   right: -1.2em;
-  top: 50%;
+  top: 12%;
 }
 
 #menubar > li > a {
@@ -633,48 +632,48 @@ ul.contact li a.icon-rss:before {
 /* Featured                                                                      */
 /*********************************************************************************/
 
-#featured-wrapper {
+.featured-wrapper {
   overflow: hidden;
   padding: 6em 0em;
   background: #383838;
   text-align: center;
 }
 
-#featured {
+.featured {
   overflow: hidden;
 }
 
-#featured .major {
+.featured .major {
   overflow: hidden;
   margin-bottom: 3em;
   padding-bottom: 2em;
   border-bottom: 1px solid #e8e8e8;
 }
 
-#featured .major h2 {
+.featured .major h2 {
   font-size: 3em;
 }
 
-#featured .major .byline {
+.featured .major .byline {
   font-size: 1.3em;
 }
 
-#featured .title {
+.featured .title {
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#featured .title h2 {
+.featured .title h2 {
   font-size: 1.2em;
 }
 
-#featured h2 {
+.featured h2 {
   text-align: center;
   color: #fff;
 }
 
-#featured .icon {
+.featured .icon {
   position: relative;
   display: inline-block;
   width: 100px;
@@ -839,21 +838,31 @@ ul.contact li a.icon-rss:before {
 /* Footer                                                                        */
 /*********************************************************************************/
 
-#footer-wrapper {
-  overflow: hidden;
-  padding: 6em 0em;
-  background: #383838;
-  text-align: center;
+#footer {
+  position: relative;
 }
 
-#footer {
+#footer-wrapper {
   overflow: hidden;
+  padding: 1em 0 0 0;
+  margin: 6em 0 0 0;
+  background: #383838;
+  text-align: center;
 }
 
 #footer .title h2 {
   font-size: 1.6em;
   font-weight: 300;
   color: #fff;
+}
+
+#footer-wrapper .featured-wrapper {
+  padding: 0 !important;
+}
+
+#footer-wrapper .featured-wrapper p {
+  color: #fff;
+  opacity: 0.75;
 }
 
 #footer .title .byline {
