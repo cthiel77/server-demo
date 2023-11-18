@@ -584,6 +584,12 @@ ul.contact li a.icon-rss:before {
   border-radius: 11px;
 }
 
+#menubar > li {
+  padding: 0 0 0.3em 0;
+  margin: 0;
+  display: flex;
+}
+
 #menubar > li > a.cta-swagger {
   background-image: url(images/logo-swagger.png);
 }
