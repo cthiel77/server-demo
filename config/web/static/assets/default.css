@@ -567,7 +567,7 @@ ul.contact li a.icon-rss:before {
 
 #menubar {
   position: fixed;
-  right: -1em;
+  right: -1.2em;
   top: 50%;
 }
 
@@ -588,6 +588,14 @@ ul.contact li a.icon-rss:before {
   padding: 0 0 0.3em 0;
   margin: 0;
   display: flex;
+  opacity: 0.5;
+  transition: opacity 0.8s, margin-right 0.5s;
+  -webkit-transition: opacity 0.8s, margin-right 0.5s;
+}
+
+#menubar > li:hover {
+  margin-right: 0.2em;
+  opacity: 1;
 }
 
 #menubar > li > a.cta-swagger {
