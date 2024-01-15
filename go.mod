@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/arsmn/fiber-swagger/v2 v2.31.1
 	github.com/gofiber/fiber/v2 v2.51.0
-	github.com/gofiber/template/html/v2 v2.0.5
+	github.com/gofiber/template/html/v2 v2.1.0
 	github.com/hashicorp/go-memdb v1.3.4
 	github.com/mbndr/figlet4go v0.0.0-20190224160619-d6cef5b186ea
 	github.com/sirupsen/logrus v1.9.3
