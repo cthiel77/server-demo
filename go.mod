@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/arsmn/fiber-swagger/v2 v2.31.1
 	github.com/gofiber/fiber/v2 v2.51.0
-	github.com/gofiber/template/html/v2 v2.0.5
+	github.com/gofiber/template/html/v2 v2.1.1
 	github.com/hashicorp/go-memdb v1.3.4
 	github.com/mbndr/figlet4go v0.0.0-20190224160619-d6cef5b186ea
 	github.com/sirupsen/logrus v1.9.3
@@ -23,7 +23,7 @@ require (
 	github.com/go-openapi/jsonreference v0.20.2 // indirect
 	github.com/go-openapi/spec v0.20.9 // indirect
 	github.com/go-openapi/swag v0.22.4 // indirect
-	github.com/gofiber/template v1.8.2 // indirect
+	github.com/gofiber/template v1.8.3 // indirect
 	github.com/gofiber/utils v1.1.0 // indirect
 	github.com/google/uuid v1.4.0 // indirect
 	github.com/hashicorp/go-immutable-radix v1.3.0 // indirect
